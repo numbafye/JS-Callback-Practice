@@ -24,6 +24,23 @@ setInterval(function () {
   character.style.bottom = y + "px";
 }, 1);
 
+document.addEventListener("keydown", function (e) {
+  if (e.repeat) return;
+
+  if (e.key === "ArrowLeft") {
+    direction = "west";
+  }
+  if (e.key === "ArrowUp") {
+    direction = "north";
+  }
+  if (e.key === "ArrowRight") {
+    direction = "east";
+  }
+  if (e.key === "ArrowDown") {
+    direction = "south";
+  }
+});
+
 move(newImage("assets/tree.png")).to(200, 450);
 move(newImage("assets/pillar.png")).to(350, 250);
 move(newImage("assets/pine-tree.png")).to(450, 350);
